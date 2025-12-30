@@ -1,0 +1,272 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// User authentication and account
+model User {
+  id           String   @id @default(uuid())
+  email        String   @unique
+  username     String   @unique
+  passwordHash String   @map("password_hash")
+  role         Role     @default(USER)
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  profile          Profile?
+  enrollments      Enrollment[]
+  progress         UserProgress[]
+  subscription     UserSubscription?
+  notifications    Notification[]
+  achievements     Achievement[]
+  learningSessions LearningSession[]
+
+  @@map("users")
+}
+
+// User profile information
+model Profile {
+  id            String  @id @default(uuid())
+  userId        String  @unique @map("user_id")
+  nickname      String
+  avatarUrl     String? @map("avatar_url")
+  description   String? @db.Text
+  selectedBadge String? @map("selected_badge") // User's chosen achievement badge to display
+
+  // Relations
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("profiles")
+}
+
+// Subscription tiers (Basic, Pro, Premium)
+model SubscriptionTier {
+  id          String   @id @default(uuid())
+  name        String   @unique // BASIC, PRO, PREMIUM
+  displayName String   @map("display_name") // "Basic", "Pro", "Premium"
+  price       Float    // 0, 99000, 199000 (IDR)
+  moduleLimit Int?     @map("module_limit") // 1, 3, null (unlimited)
+  features    Json     // Array of features
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  subscriptions UserSubscription[]
+
+  @@map("subscription_tiers")
+}
+
+// User subscription to a tier
+model UserSubscription {
+  id              String    @id @default(uuid())
+  userId          String    @unique @map("user_id")
+  tierId          String    @map("tier_id")
+  selectedModules String[]  @map("selected_modules") // For Pro tier - array of module IDs
+  status          String    @default("ACTIVE") // ACTIVE, EXPIRED, CANCELLED
+  startDate       DateTime  @default(now()) @map("start_date")
+  endDate         DateTime? @map("end_date")
+  createdAt       DateTime  @default(now()) @map("created_at")
+  updatedAt       DateTime  @updatedAt @map("updated_at")
+
+  // Relations
+  user User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tier SubscriptionTier @relation(fields: [tierId], references: [id])
+
+  @@map("user_subscriptions")
+}
+
+// Learning modules (Android, iOS, Web, Fundamental)
+model Module {
+  id             String   @id @default(uuid())
+  title          String
+  slug           String   @unique
+  description    String   @db.Text
+  estimatedHours Int      @map("estimated_hours")
+  category       Category
+  order          Int      @default(0)
+  thumbnailUrl   String?  @map("thumbnail_url")
+  createdAt      DateTime @default(now()) @map("created_at")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  chapters        Chapter[]
+  enrollments     Enrollment[]
+  prerequisites   ModulePrerequisite[] @relation("ModulePrerequisites")
+  prerequisiteFor ModulePrerequisite[] @relation("PrerequisiteFor")
+
+  @@map("modules")
+}
+
+// Module prerequisites (e.g., JavaScript → React)
+model ModulePrerequisite {
+  id             String   @id @default(uuid())
+  moduleId       String   @map("module_id") // Current module
+  prerequisiteId String   @map("prerequisite_id") // Required module
+  order          Int      @default(0) // Order in sequence
+  createdAt      DateTime @default(now()) @map("created_at")
+
+  // Relations
+  module       Module @relation("ModulePrerequisites", fields: [moduleId], references: [id], onDelete: Cascade)
+  prerequisite Module @relation("PrerequisiteFor", fields: [prerequisiteId], references: [id], onDelete: Cascade)
+
+  @@unique([moduleId, prerequisiteId])
+  @@map("module_prerequisites")
+}
+
+// Learning paths (e.g., Web Development, PHP Development)
+model LearningPath {
+  id          String   @id @default(uuid())
+  name        String   // "Web Development", "PHP Development"
+  description String   @db.Text
+  modules     Json     // Ordered array of module IDs
+  category    String   // WEB_DEV, MOBILE_DEV, etc.
+  icon        String?  // Optional icon for UI
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  @@map("learning_paths")
+}
+
+// Chapters within modules (grouping of lessons)
+model Chapter {
+  id        String   @id @default(uuid())
+  moduleId  String   @map("module_id")
+  title     String
+  order     Int      @default(0)
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  module  Module   @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+  lessons Lesson[]
+
+  @@map("chapters")
+}
+
+// Individual lessons within chapters
+model Lesson {
+  id               String   @id @default(uuid())
+  chapterId        String   @map("chapter_id")
+  title            String
+  content          String   @db.Text
+  order            Int      @default(0)
+  estimatedMinutes Int      @default(15) @map("estimated_minutes")
+  difficulty       String   @default("BEGINNER") // BEGINNER, INTERMEDIATE, ADVANCED
+  createdAt        DateTime @default(now()) @map("created_at")
+  updatedAt        DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  chapter          Chapter           @relation(fields: [chapterId], references: [id], onDelete: Cascade)
+  progress         UserProgress[]
+  learningSessions LearningSession[]
+
+  @@map("lessons")
+}
+
+// User enrollment in modules
+model Enrollment {
+  id             String    @id @default(uuid())
+  userId         String    @map("user_id")
+  moduleId       String    @map("module_id")
+  enrolledAt     DateTime  @default(now()) @map("enrolled_at")
+  lastAccessedAt DateTime? @map("last_accessed_at")
+
+  // Relations
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  module Module @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, moduleId])
+  @@map("enrollments")
+}
+
+// Track user progress per lesson
+model UserProgress {
+  id          String    @id @default(uuid())
+  userId      String    @map("user_id")
+  lessonId    String    @map("lesson_id")
+  completed   Boolean   @default(false)
+  completedAt DateTime? @map("completed_at")
+
+  // Relations
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lesson Lesson @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, lessonId])
+  @@map("user_progress")
+}
+
+// Notification for user events
+model Notification {
+  id        String   @id @default(uuid())
+  userId    String   @map("user_id")
+  type      String   // LESSON_COMPLETE, CHAPTER_COMPLETE, MODULE_COMPLETE, ACHIEVEMENT, SUBSCRIPTION
+  title     String
+  message   String
+  icon      String?  // Icon name
+  read      Boolean  @default(false)
+  metadata  Json?    // e.g., { moduleId, lessonId, achievementId }
+  createdAt DateTime @default(now()) @map("created_at")
+
+  // Relations
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("notifications")
+}
+
+// Achievement/Badge earned by user
+model Achievement {
+  id          String   @id @default(uuid())
+  userId      String   @map("user_id")
+  type        String   // CHAPTER_COMPLETE, MODULE_COMPLETE, TIME_SPENT, PROFILE_COMPLETE, SUBSCRIPTION, FIRST_LESSON
+  title       String
+  description String
+  icon        String   // Icon name or emoji
+  rarity      String   @default("COMMON") // COMMON, RARE, EPIC, LEGENDARY
+  earnedAt    DateTime @default(now()) @map("earned_at")
+  metadata    Json?    // e.g., { moduleId, chapterId, timeMinutes, tierName }
+
+  // Relations
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("achievements")
+}
+
+// Track learning session duration (for accurate time tracking)
+model LearningSession {
+  id         String    @id @default(uuid())
+  userId     String    @map("user_id")
+  lessonId   String    @map("lesson_id")
+  moduleId   String    @map("module_id")
+  startTime  DateTime  @default(now()) @map("start_time")
+  endTime    DateTime? @map("end_time")
+  duration   Int?      // Duration in seconds (calculated when session ends)
+  isActive   Boolean   @default(true) @map("is_active")
+  lastPing   DateTime  @default(now()) @map("last_ping") // For heartbeat detection
+
+  // Relations
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lesson Lesson @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+
+  @@map("learning_sessions")
+}
+
+// Enums
+enum Role {
+  USER
+  ADMIN
+}
+
+enum Category {
+  ANDROID_DEV
+  IOS_DEV
+  WEB_DEV
+  FUNDAMENTAL
+}

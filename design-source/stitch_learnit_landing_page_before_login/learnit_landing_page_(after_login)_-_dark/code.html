@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LearnIT Dashboard</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec7f13",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#221910",
+                        "surface-dark": "#332619",
+                        "surface-highlight": "#483623",
+                        "text-cream": "#c9ad92",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom progress circle styles */
+        .progress-ring__circle {
+            transition: stroke-dashoffset 0.35s;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white overflow-x-hidden min-h-screen flex flex-col">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#483623] px-10 py-4 sticky top-0 bg-background-dark/95 backdrop-blur z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-white">
+<div class="size-8 text-primary">
+<span class="material-symbols-outlined" style="font-size: 32px;">school</span>
+</div>
+<h2 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">LearnIT</h2>
+</div>
+<label class="hidden md:flex flex-col min-w-40 !h-10 max-w-64 group">
+<div class="flex w-full flex-1 items-stretch rounded-xl h-full shadow-inner bg-[#483623] transition-colors focus-within:bg-[#5a432b]">
+<div class="text-[#c9ad92] flex border-none items-center justify-center pl-4 rounded-l-xl border-r-0">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-white focus:outline-0 focus:ring-0 border-none bg-transparent focus:border-none h-full placeholder:text-[#c9ad92] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" placeholder="Cari modul..." value=""/>
+</div>
+</label>
+</div>
+<div class="flex flex-1 justify-end gap-8 items-center">
+<div class="hidden lg:flex items-center gap-9">
+<a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-[#c9ad92] text-sm font-medium leading-normal hover:text-white transition-colors" href="#">Modul Saya</a>
+<a class="text-[#c9ad92] text-sm font-medium leading-normal hover:text-white transition-colors" href="#">Komunitas</a>
+</div>
+<button class="flex items-center justify-center rounded-xl size-10 bg-[#483623] hover:bg-[#5a432b] text-white transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-primary rounded-full border border-[#483623]"></span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-[#483623] cursor-pointer" data-alt="User profile picture showing a smiling person" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC6yRnFzZ5rpOWoBtci8vuBWmIx6WSiH9OPcjnG5l_IQlnq30s-WDWr3eDXKNqWXEHwDcHO96glx3SvxLyeCqZTdbE6E4Q_Qg0qNwvEsmK8lSubEn_1xZqWtOMNhlRF1WuDPSExxFo42-v9Hqoml4X2QMxhALYm1acvL5YlzPkMdow3Dqkim1sHNmn8RJRHfrR8p_Kl2iZLD0XpjP5kKMSusj0XxNleugORmbErbZRxSVRwfrxHv8qgjbI-1Qc-65eHJXj7YblYll8t");'></div>
+</div>
+</header>
+<div class="flex-1 w-full max-w-[1280px] mx-auto p-6 md:p-10 flex flex-col gap-10">
+<!-- Welcome Section -->
+<section class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+<div class="flex flex-col gap-2">
+<h1 class="text-white text-3xl md:text-5xl font-black leading-tight tracking-[-0.033em]">Halo, Andi 👋</h1>
+<p class="text-[#c9ad92] text-lg font-normal leading-normal">Selamat datang kembali di LearnIT, siap untuk belajar hari ini?</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-surface-highlight hover:bg-[#5a432b] text-[#c9ad92] hover:text-white text-sm font-bold transition-colors">
+<span class="material-symbols-outlined text-lg">history</span>
+                    Riwayat
+                </button>
+<button class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-surface-highlight hover:bg-[#5a432b] text-[#c9ad92] hover:text-white text-sm font-bold transition-colors">
+<span class="material-symbols-outlined text-lg">settings</span>
+                    Pengaturan
+                </button>
+</div>
+</section>
+<!-- Stats Overview -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-surface-highlight border border-[#5a432b]/30">
+<div class="flex items-center gap-3 mb-2">
+<span class="p-2 rounded-lg bg-[#5a432b] text-primary material-symbols-outlined">check_circle</span>
+<p class="text-text-cream text-sm font-medium leading-normal">Total Modul Selesai</p>
+</div>
+<p class="text-white tracking-tight text-3xl font-bold leading-tight pl-1">12 <span class="text-lg font-normal text-text-cream">Modul</span></p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-surface-highlight border border-[#5a432b]/30">
+<div class="flex items-center gap-3 mb-2">
+<span class="p-2 rounded-lg bg-[#5a432b] text-primary material-symbols-outlined">schedule</span>
+<p class="text-text-cream text-sm font-medium leading-normal">Jam Belajar</p>
+</div>
+<p class="text-white tracking-tight text-3xl font-bold leading-tight pl-1">48 <span class="text-lg font-normal text-text-cream">Jam</span></p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-surface-highlight border border-[#5a432b]/30">
+<div class="flex items-center gap-3 mb-2">
+<span class="p-2 rounded-lg bg-[#5a432b] text-primary material-symbols-outlined">leaderboard</span>
+<p class="text-text-cream text-sm font-medium leading-normal">Peringkat</p>
+</div>
+<p class="text-white tracking-tight text-3xl font-bold leading-tight pl-1">Top 10% <span class="text-lg font-normal text-text-cream">Global</span></p>
+</div>
+</section>
+<!-- Current Module Hero -->
+<section class="rounded-2xl bg-surface-dark overflow-hidden shadow-lg border border-[#483623]">
+<div class="flex flex-col lg:flex-row items-stretch">
+<div class="lg:w-2/5 h-64 lg:h-auto bg-cover bg-center relative" data-alt="Person typing python code on a laptop screen with dark aesthetic" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAePYHDX7EJmt9eubcXcGBMYoIBh92fZsLovXf4pN2FN4NuhNF4oGmPgzQfUjv0a7ow7yFCPTFv_1X15sVBYcHCz7reNk0m3Rr1IRkUXXuG3NRIymrjrlkN8PXlHhghZ3sEt6wxVRErzGdauH7Zbvx82tPRMQ6CUe8DOCbnmE7jpewtUOi3X-96dfDsZ5VJ3ntfb3QHzd2QreX-ry1BDQ-K8NZUUMI7mB3XEfrhkEfoKj5m_P1jzPlWrAgLWBj1tXLXKO-KOxG86GcA");'>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dark to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-surface-dark"></div>
+<div class="absolute top-4 left-4 bg-primary/90 backdrop-blur text-[#221a11] text-xs font-bold px-3 py-1.5 rounded-lg uppercase tracking-wider">
+                        Lanjutkan Belajar
+                    </div>
+</div>
+<div class="p-6 lg:p-8 flex flex-col justify-center gap-4 flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-white text-2xl font-bold mb-2">Intro to Python: Data Structures</h3>
+<p class="text-text-cream">Modul 3: Variables &amp; Data Types • Terakhir diakses 2 jam yang lalu</p>
+</div>
+<div class="hidden sm:block">
+<!-- Circular Progress -->
+<div class="relative size-16">
+<svg class="size-full" height="36" viewbox="0 0 36 36" width="36">
+<path class="text-[#483623]" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="4"></path>
+<path class="text-primary progress-ring__circle" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="75, 100" stroke-linecap="round" stroke-width="4"></path>
+</svg>
+<div class="absolute top-0 left-0 w-full h-full flex items-center justify-center text-xs font-bold text-white">75%</div>
+</div>
+</div>
+</div>
+<div class="w-full bg-[#483623] rounded-full h-2 sm:hidden">
+<div class="bg-primary h-2 rounded-full" style="width: 75%"></div>
+</div>
+<div class="flex items-center gap-4 pt-2">
+<button class="flex-1 sm:flex-none bg-primary hover:bg-[#d66f0d] text-[#221a11] px-6 py-3 rounded-xl font-bold text-sm transition-colors flex items-center justify-center gap-2">
+<span>Lanjutkan Modul</span>
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+<button class="px-4 py-3 rounded-xl border border-[#483623] hover:bg-[#483623] text-text-cream transition-colors">
+<span class="material-symbols-outlined">bookmark_border</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Modules Grid -->
+<section class="flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<h2 class="text-white text-2xl font-bold">Modul Belajar Anda</h2>
+<a class="text-primary text-sm font-medium hover:text-white transition-colors flex items-center gap-1" href="#">
+                    Lihat Semua
+                    <span class="material-symbols-outlined text-lg">chevron_right</span>
+</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Card 1: Completed -->
+<article class="bg-surface-dark rounded-xl p-4 shadow-md hover:shadow-xl transition-all duration-300 group border border-transparent hover:border-[#483623]">
+<div class="relative h-40 w-full rounded-lg bg-cover bg-center mb-4 overflow-hidden" data-alt="Abstract code visualization with green matrix style overlay" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAxiLK_cT2FyssagxgZAddPMfRwdib-peWI2ZMIBfpGkjmKBRHua9kicRq070GMXGzxF4Uesu5rC1lXnQE6zEoG06Rj1B6C5K0cu6ogPzWQr3pKYQQbLsSrD9DNE5qPkNa3x-NjCp0enVal5ZoRUpbkRB6g7dznBJmmboNh-GFDfovYCh2b4y9WX3dVLmVJGksekoOxyXa2_iwadpZqNS8sd-6cs5XOoQXbrSS2Ak1-x4pKGI9PZE1Wt9-yqxWJP8b7r5KYn_RzE_YE");'>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"></div>
+<div class="absolute top-3 right-3 bg-green-500/90 text-[#1a1a1a] text-[10px] font-bold px-2 py-1 rounded shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check</span> SELESAI
+                         </div>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-white text-lg font-bold group-hover:text-primary transition-colors">Dasar Pemrograman</h3>
+<span class="material-symbols-outlined text-green-500">check_circle</span>
+</div>
+<p class="text-[#c9ad92] text-sm mb-4 line-clamp-2">Pengenalan logika pemrograman dan sintaks dasar untuk pemula.</p>
+<div class="w-full bg-[#483623] rounded-full h-1.5 mb-2">
+<div class="bg-green-500 h-1.5 rounded-full" style="width: 100%"></div>
+</div>
+<div class="text-right text-xs text-[#c9ad92]">100% Selesai</div>
+</article>
+<!-- Card 2: In Progress -->
+<article class="bg-surface-dark rounded-xl p-4 shadow-md hover:shadow-xl transition-all duration-300 group border border-transparent hover:border-[#483623]">
+<div class="relative h-40 w-full rounded-lg bg-cover bg-center mb-4 overflow-hidden" data-alt="Laptop displaying complex algorithm flowchart on dark background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDTHbiCUIqv_WgBS8Z0484UPkmebyk_Y8WqKYBlYJyGMIXGNyxX7Ys6Pa1mmi6wWCtnf2zkJ2PKheZrry6r_fAU9x1RXJvFIkp-Vf3R3FwQOYOmFpIexxDE_8AURmR0eu5fhRssEPy-EgyzT8m26MibDxPgwyKDGzofrElEe3a5thJpvzRs2I7Y_Y_regDE42P1_CQSMhbHzLdrRR56Px3H_54N6aE56r_3WWfVatzQQthzWwLPwjs0wG3yulnW0IlfEKKrBYGIadrB");'>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"></div>
+<div class="absolute top-3 right-3 bg-primary/90 text-[#221a11] text-[10px] font-bold px-2 py-1 rounded shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">play_arrow</span> SEDANG BELAJAR
+                         </div>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-white text-lg font-bold group-hover:text-primary transition-colors">Algoritma Dasar</h3>
+</div>
+<p class="text-[#c9ad92] text-sm mb-4 line-clamp-2">Memahami flowchart, pseudocode, dan penyelesaian masalah sederhana.</p>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex flex-col w-full mr-4">
+<div class="w-full bg-[#483623] rounded-full h-1.5 mb-2">
+<div class="bg-primary h-1.5 rounded-full" style="width: 45%"></div>
+</div>
+<div class="text-xs text-[#c9ad92]">45% Selesai</div>
+</div>
+<button class="bg-surface-highlight hover:bg-primary hover:text-[#221a11] text-white p-2 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-lg block">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- Card 3: Not Started -->
+<article class="bg-surface-dark rounded-xl p-4 shadow-md hover:shadow-xl transition-all duration-300 group border border-transparent hover:border-[#483623]">
+<div class="relative h-40 w-full rounded-lg bg-cover bg-center mb-4 overflow-hidden" data-alt="Server racks with blue lights indicating data structure concepts" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBK5aPcABgtMO8-L-fqS_rru6VznUyPjeYtyTbSJNbJrxkACFrr-obRGwKh9UYuJo4S8p4_sfpRDXTE7etEn_PzhLCM4xe2Xpt5UzKgks5WwsnYxnAFBWDrJD5xw2b_1m7FRODRoG_-mcAsJ53zb7ihsqD-jycJrn4nq-2kiN6Jiw81krbHQgU4EdTF_Np5_xQniPRvw5-Sussfr03z3JcYfhwlrRFZEEyLsToVXFe5qHVMLqjkgBKGiBTUXGYZXg471WmLlXc0F69R");'>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"></div>
+<div class="absolute top-3 right-3 bg-gray-600/90 text-white text-[10px] font-bold px-2 py-1 rounded shadow-sm flex items-center gap-1">
+                            BELUM MULAI
+                         </div>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-white text-lg font-bold group-hover:text-primary transition-colors">Struktur Data</h3>
+</div>
+<p class="text-[#c9ad92] text-sm mb-4 line-clamp-2">Konsep array, linked list, stack, dan queue dalam pemrograman.</p>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex flex-col w-full mr-4">
+<div class="w-full bg-[#483623] rounded-full h-1.5 mb-2">
+<div class="bg-gray-600 h-1.5 rounded-full" style="width: 0%"></div>
+</div>
+<div class="text-xs text-[#c9ad92]">0% Selesai</div>
+</div>
+<button class="bg-surface-highlight hover:bg-primary hover:text-[#221a11] text-white p-2 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-lg block">play_arrow</span>
+</button>
+</div>
+</article>
+<!-- Card 4: New -->
+<article class="bg-surface-dark rounded-xl p-4 shadow-md hover:shadow-xl transition-all duration-300 group border border-transparent hover:border-[#483623] flex flex-col justify-center items-center border-dashed border-2 border-[#483623] opacity-60 hover:opacity-100 cursor-pointer min-h-[300px]">
+<div class="size-16 rounded-full bg-[#483623] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl text-[#c9ad92]">add</span>
+</div>
+<h3 class="text-white text-lg font-bold mb-1">Tambah Modul</h3>
+<p class="text-[#c9ad92] text-sm text-center px-4">Jelajahi katalog untuk menambah skill baru</p>
+</article>
+</div>
+</section>
+</div>
+</body></html>

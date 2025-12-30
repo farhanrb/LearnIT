@@ -1,0 +1,23 @@
+{
+  "name": "learnit",
+  "version": "1.0.0",
+  "private": true,
+  "description": "LearnIT - Modern IT Learning Platform",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean"
+  },
+  "devDependencies": {
+    "bcryptjs": "^3.0.3",
+    "turbo": "^1.13.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

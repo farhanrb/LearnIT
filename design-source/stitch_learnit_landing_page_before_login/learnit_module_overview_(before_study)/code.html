@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LearnIT Module Overview</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec7f13",
+                        "primary-dark": "#d66c0d",
+                        "secondary": "#9a734c",
+                        "background-light": "#fcfaf8",
+                        "background-dark": "#221910",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2d241b",
+                        "text-main": "#1b140d",
+                        "text-muted": "#9a734c",
+                        "border-color": "#f3ede7",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 1,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-gray-100 min-h-screen flex flex-col font-display antialiased selection:bg-primary/20">
+<!-- Navbar -->
+<header class="sticky top-0 z-50 w-full border-b border-solid border-border-color bg-background-light/95 backdrop-blur dark:bg-background-dark/95 dark:border-gray-800">
+<div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+<div class="flex items-center gap-4 text-text-main dark:text-white">
+<div class="flex size-8 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined">code_blocks</span>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-tight">LearnIT</h2>
+</div>
+<nav class="hidden md:flex flex-1 items-center justify-center gap-8">
+<a class="text-text-main dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors" href="#">Courses</a>
+<a class="text-text-main dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors" href="#">Community</a>
+<a class="text-text-main dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors" href="#">My Progress</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex items-center gap-2 rounded-full border border-border-color bg-white px-3 py-1.5 dark:bg-surface-dark dark:border-gray-700">
+<span class="material-symbols-outlined text-primary text-[18px]">local_fire_department</span>
+<span class="text-xs font-bold text-text-main dark:text-white">3 Day Streak</span>
+</div>
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 border-2 border-white shadow-sm dark:border-gray-700 cursor-pointer hover:opacity-90 transition-opacity" data-alt="User profile avatar showing a smiling person" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB_l7zOAuquDv2X6jZU_QEsN7lzN-ZqeuPTBaFyhIw5-eE-lluqDR7-0_Wv-sbcRSVWf-OtjwQwnVgN6KMt1HVyRv-F_bauPHLZFTweBxU7UXtFHC73ODXFRVm7T0mm7tMuZ76ABOHlM0PabSWxHtDErOTh1lspXKgmQbfYCFVKD2EA5eUb_t6Xwb2z0o7KNj43ZLrs-U_x5PzBWjMNSK0YF-0Ezw71tPzX3MJUE-Kqh16zcPVR04AENXv3Lgi7yNzf-9DX7SSJlJfF");'>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 text-sm text-text-muted mb-8 dark:text-gray-400">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Python Basics</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="font-medium text-text-main dark:text-white">Module 1: Intro</span>
+</nav>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+<!-- Main Content Column -->
+<div class="lg:col-span-8 flex flex-col gap-8">
+<!-- Hero Section -->
+<div class="flex flex-col gap-6">
+<div class="relative w-full overflow-hidden rounded-xl aspect-[21/9] shadow-sm">
+<div class="absolute inset-0 bg-gradient-to-r from-background-dark/80 to-transparent z-10"></div>
+<div class="absolute inset-0 bg-center bg-cover" data-alt="Abstract visualization of code logic and algorithms with glowing nodes" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBIsNWjXGgLMz77P-4KIxg9g6iK-kDbdCLRWa1V7xX8m2INOulKtkap4T5wthL_Tc2otSQByQNf0ZBbqn7eRAtx47efwip7UtAaN7n-81nQUA18X3hOnQCfo--9xLl3HKGZTHhVv3dFw496R8MIgXtFn_6MlqdE6zLeR2BucVtbi29VtDD95LxxaBNRaQiCcNz9evJOsRQ_YrGTg4IXOx__Twg25_-dKkfTDgxfbIcF9O1PIHR_ApoR-i0obx3Wlpn32TMRP9On8ouV");'>
+</div>
+<div class="absolute bottom-0 left-0 p-6 z-20 w-full">
+<div class="flex items-center gap-3 mb-3">
+<span class="inline-flex items-center rounded-md bg-white/20 px-2 py-1 text-xs font-medium text-white ring-1 ring-inset ring-white/30 backdrop-blur-md">Module 1</span>
+<span class="inline-flex items-center rounded-md bg-primary px-2 py-1 text-xs font-medium text-white shadow-sm">Updated 2024</span>
+</div>
+<h1 class="text-3xl sm:text-4xl font-black text-white leading-tight tracking-tight mb-2">
+                                    Pengantar Algoritma &amp; Pemrograman
+                                </h1>
+<p class="text-white/90 text-lg max-w-2xl font-light">
+                                    Pelajari dasar-dasar logika pemrograman dan cara berpikir komputasional dalam modul interaktif ini.
+                                </p>
+</div>
+</div>
+<!-- Quick Stats Row (Mobile only, shown here for responsive flow) -->
+<div class="flex flex-wrap gap-4 lg:hidden">
+<div class="flex items-center gap-2 bg-white dark:bg-surface-dark px-4 py-2 rounded-lg border border-border-color dark:border-gray-700 shadow-sm flex-1 justify-center">
+<span class="material-symbols-outlined text-secondary">schedule</span>
+<div class="flex flex-col">
+<span class="text-[10px] text-text-muted uppercase tracking-wider font-bold">Waktu</span>
+<span class="text-sm font-semibold text-text-main dark:text-white">45 Menit</span>
+</div>
+</div>
+<div class="flex items-center gap-2 bg-white dark:bg-surface-dark px-4 py-2 rounded-lg border border-border-color dark:border-gray-700 shadow-sm flex-1 justify-center">
+<span class="material-symbols-outlined text-secondary">bar_chart</span>
+<div class="flex flex-col">
+<span class="text-[10px] text-text-muted uppercase tracking-wider font-bold">Level</span>
+<span class="text-sm font-semibold text-text-main dark:text-white">Pemula</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Description Text -->
+<div class="prose prose-brown dark:prose-invert max-w-none">
+<h3 class="text-xl font-bold text-text-main dark:text-white mb-4">Tentang Modul Ini</h3>
+<p class="text-text-main/80 dark:text-gray-300 leading-relaxed mb-6">
+                            Pemrograman bukan hanya tentang menulis kode yang terlihat rumit, tetapi tentang memecahkan masalah dengan cara yang logis dan terstruktur. Dalam modul ini, kita akan membongkar mitos bahwa koding itu sulit.
+                        </p>
+<p class="text-text-main/80 dark:text-gray-300 leading-relaxed">
+                            Kamu akan diajak untuk memahami konsep dasar seperti variabel, tipe data, dan alur kontrol logika menggunakan analogi kehidupan sehari-hari yang mudah dipahami. Di akhir sesi, kamu tidak hanya akan menulis baris kode pertamamu, tapi kamu akan mengerti <em>mengapa</em> kode tersebut bekerja.
+                        </p>
+</div>
+<!-- What you will learn -->
+<div class="bg-white dark:bg-surface-dark rounded-xl p-6 sm:p-8 border border-border-color dark:border-gray-700 shadow-sm">
+<h3 class="text-lg font-bold text-text-main dark:text-white mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">school</span>
+                            Apa yang akan kamu pelajari?
+                        </h3>
+<div class="grid sm:grid-cols-2 gap-y-4 gap-x-8">
+<div class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-green-600 text-[20px] mt-0.5">check_circle</span>
+<span class="text-sm font-medium text-text-main dark:text-gray-200">Memahami konsep dasar algoritma</span>
+</div>
+<div class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-green-600 text-[20px] mt-0.5">check_circle</span>
+<span class="text-sm font-medium text-text-main dark:text-gray-200">Menulis script "Hello World" pertama</span>
+</div>
+<div class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-green-600 text-[20px] mt-0.5">check_circle</span>
+<span class="text-sm font-medium text-text-main dark:text-gray-200">Mengenal tipe data dasar (String, Integer)</span>
+</div>
+<div class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-green-600 text-[20px] mt-0.5">check_circle</span>
+<span class="text-sm font-medium text-text-main dark:text-gray-200">Logika percabangan sederhana (If/Else)</span>
+</div>
+</div>
+</div>
+<!-- Prerequisites -->
+<div class="bg-background-light dark:bg-background-dark rounded-xl p-0">
+<h3 class="text-lg font-bold text-text-main dark:text-white mb-4">Prasyarat</h3>
+<div class="flex flex-col sm:flex-row gap-4">
+<div class="flex items-center gap-3 p-4 bg-white dark:bg-surface-dark border border-border-color dark:border-gray-700 rounded-lg flex-1">
+<div class="bg-blue-50 dark:bg-blue-900/30 p-2 rounded-md">
+<span class="material-symbols-outlined text-blue-600 dark:text-blue-400">laptop_mac</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-text-main dark:text-white">Laptop / PC</span>
+<span class="text-xs text-text-muted">Windows, Mac, atau Linux</span>
+</div>
+</div>
+<div class="flex items-center gap-3 p-4 bg-white dark:bg-surface-dark border border-border-color dark:border-gray-700 rounded-lg flex-1">
+<div class="bg-purple-50 dark:bg-purple-900/30 p-2 rounded-md">
+<span class="material-symbols-outlined text-purple-600 dark:text-purple-400">language</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-text-main dark:text-white">Web Browser</span>
+<span class="text-xs text-text-muted">Chrome, Firefox, atau Edge</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar / CTA Column -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Sticky Card -->
+<div class="sticky top-24 flex flex-col gap-6">
+<div class="bg-white dark:bg-surface-dark rounded-xl border border-border-color dark:border-gray-700 shadow-lg p-6 flex flex-col gap-6">
+<div class="flex flex-col gap-1">
+<span class="text-sm text-text-muted font-medium">Progress Kamu</span>
+<div class="flex items-center justify-between mb-1">
+<span class="text-xs font-bold text-text-main dark:text-white">0% Selesai</span>
+</div>
+<div class="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-2.5">
+<div class="bg-primary h-2.5 rounded-full" style="width: 2%"></div>
+</div>
+</div>
+<hr class="border-border-color dark:border-gray-700"/>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2 text-text-muted text-sm">
+<span class="material-symbols-outlined text-[18px]">timer</span>
+<span>Estimasi</span>
+</div>
+<span class="text-base font-bold text-text-main dark:text-white pl-[26px]">~45 Menit</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2 text-text-muted text-sm">
+<span class="material-symbols-outlined text-[18px]">signal_cellular_alt</span>
+<span>Kesulitan</span>
+</div>
+<span class="text-base font-bold text-text-main dark:text-white pl-[26px]">Pemula</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2 text-text-muted text-sm">
+<span class="material-symbols-outlined text-[18px]">group</span>
+<span>Siswa</span>
+</div>
+<span class="text-base font-bold text-text-main dark:text-white pl-[26px]">1,240</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2 text-text-muted text-sm">
+<span class="material-symbols-outlined text-[18px]">workspace_premium</span>
+<span>Poin</span>
+</div>
+<span class="text-base font-bold text-text-main dark:text-white pl-[26px]">+50 XP</span>
+</div>
+</div>
+<button class="group relative w-full flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white font-bold py-3.5 px-6 rounded-lg transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 text-base">
+<span>Mulai Belajar</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<div class="text-center">
+<p class="text-xs text-text-muted">Akses selamanya • Sertifikat penyelesaian</p>
+</div>
+</div>
+<!-- Instructor Card -->
+<div class="bg-transparent rounded-xl p-4 flex items-center gap-4">
+<div class="relative">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-12" data-alt="Profile picture of the instructor" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA_5eG3gDTWplqaBy-pYQT0qxX_ZiB9akvXk62RoN-m5ETPYd9tgfx2mR3vSPS8PHzGORJFl_083OJXQWaPdqgIsCOcGcaUR934XYFXN1wNz3ElGAlId8GEVJ0_ZCHGj46XHvz-Mga4p1LUCapQM2N3zpCjWGfgkEcDzH7DUVHuSy4SpbiOx8JDLdUwW901VqHB3hODOegFygJxPjz_S1rVs9QFqkod8Li_xfxzML0lIdJ8Y6KE7evY4SkQ58F-upsE7R_FSTvZ3Rwr");'>
+</div>
+<div class="absolute bottom-0 right-0 bg-green-500 border-2 border-background-light dark:border-background-dark size-3 rounded-full"></div>
+</div>
+<div class="flex flex-col">
+<span class="text-xs text-text-muted font-medium uppercase tracking-wide">Instruktur</span>
+<span class="text-sm font-bold text-text-main dark:text-white">Sarah Wulandari</span>
+<span class="text-xs text-text-main/60 dark:text-gray-400">Senior Software Engineer</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Simple -->
+<footer class="mt-auto border-t border-border-color bg-white py-8 dark:bg-background-dark dark:border-gray-800">
+<div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 sm:flex-row sm:px-6 lg:px-8">
+<p class="text-sm text-text-muted">© 2024 LearnIT Platform. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-sm text-text-muted hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="text-sm text-text-muted hover:text-primary transition-colors" href="#">Terms</a>
+<a class="text-sm text-text-muted hover:text-primary transition-colors" href="#">Support</a>
+</div>
+</div>
+</footer>
+</body></html>

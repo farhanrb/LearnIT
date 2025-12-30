@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LearnIT Register Page</title>
+<!-- Fonts and Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec7f13",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#221910",
+                        "text-main": "#1b140d",
+                        "text-secondary": "#9a734c",
+                        "border-color": "#e7dbcf",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-main antialiased min-h-screen flex flex-col transition-colors duration-300">
+<main class="flex-1 flex items-center justify-center p-6 relative overflow-hidden group/design-root">
+<!-- Background Elements -->
+<div class="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-primary/5 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] bg-[#A68A7C]/10 rounded-full blur-[100px] pointer-events-none"></div>
+<!-- Registration Card -->
+<div class="w-full max-w-[480px] bg-white dark:bg-[#2c2219] rounded-xl shadow-xl shadow-[#1b140d]/5 border border-[#e7dbcf]/50 dark:border-[#e7dbcf]/10 overflow-hidden relative z-10">
+<div class="p-8 sm:p-10 flex flex-col gap-6">
+<!-- Brand Header -->
+<div class="flex flex-col items-center text-center gap-2">
+<div class="flex items-center gap-2 text-text-main dark:text-white mb-2">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z" fill="currentColor" fill-rule="evenodd"></path>
+<path clip-rule="evenodd" d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-2xl font-bold tracking-[-0.015em]">LearnIT</h2>
+</div>
+<h1 class="text-text-main dark:text-white tracking-tight text-3xl font-bold leading-tight">Join the community</h1>
+<p class="text-text-secondary text-base font-normal leading-normal">Master informatics from scratch.</p>
+</div>
+<!-- Registration Form -->
+<form class="flex flex-col gap-4" onsubmit="event.preventDefault();">
+<!-- Username Field -->
+<label class="flex flex-col gap-1.5 w-full group">
+<p class="text-text-main dark:text-gray-200 text-sm font-medium leading-normal">Username</p>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-text-secondary group-focus-within:text-primary transition-colors duration-200 select-none pointer-events-none">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</span>
+<input class="flex w-full min-w-0 resize-none overflow-hidden rounded-lg text-text-main dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-border-color bg-background-light dark:bg-[#3a2e24] dark:border-[#4a3b32] h-12 pl-11 pr-4 placeholder:text-text-secondary/60 text-base font-normal leading-normal transition-all" placeholder="Choose a username" type="text"/>
+</div>
+</label>
+<!-- Email Field -->
+<label class="flex flex-col gap-1.5 w-full group">
+<p class="text-text-main dark:text-gray-200 text-sm font-medium leading-normal">Email Address</p>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-text-secondary group-focus-within:text-primary transition-colors duration-200 select-none pointer-events-none">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</span>
+<input class="flex w-full min-w-0 resize-none overflow-hidden rounded-lg text-text-main dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-border-color bg-background-light dark:bg-[#3a2e24] dark:border-[#4a3b32] h-12 pl-11 pr-4 placeholder:text-text-secondary/60 text-base font-normal leading-normal transition-all" placeholder="name@example.com" type="email"/>
+</div>
+</label>
+<!-- Password Field -->
+<label class="flex flex-col gap-1.5 w-full group">
+<p class="text-text-main dark:text-gray-200 text-sm font-medium leading-normal">Password</p>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-text-secondary group-focus-within:text-primary transition-colors duration-200 select-none pointer-events-none">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+</span>
+<input class="flex w-full min-w-0 resize-none overflow-hidden rounded-lg text-text-main dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-border-color bg-background-light dark:bg-[#3a2e24] dark:border-[#4a3b32] h-12 pl-11 pr-12 placeholder:text-text-secondary/60 text-base font-normal leading-normal transition-all" placeholder="Create a strong password" type="password"/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-text-secondary hover:text-primary transition-colors cursor-pointer flex items-center justify-center rounded-full p-1 hover:bg-black/5 dark:hover:bg-white/5" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility_off</span>
+</button>
+</div>
+</label>
+<!-- Submit Button -->
+<button class="mt-2 flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-4 bg-primary hover:bg-[#d57211] active:bg-[#bd650f] text-white text-base font-bold leading-normal tracking-[0.015em] transition-all shadow-md shadow-primary/25">
+<span class="truncate">Register Now</span>
+</button>
+</form>
+<!-- Divider -->
+<div class="relative flex py-1 items-center">
+<div class="flex-grow border-t border-border-color dark:border-[#4a3b32]"></div>
+<span class="flex-shrink mx-4 text-text-secondary text-sm font-medium">Or sign up with</span>
+<div class="flex-grow border-t border-border-color dark:border-[#4a3b32]"></div>
+</div>
+<!-- Social Login -->
+<button class="flex w-full cursor-pointer items-center justify-center gap-3 rounded-lg h-12 px-4 bg-white dark:bg-[#3a2e24] border border-border-color dark:border-[#4a3b32] hover:bg-gray-50 dark:hover:bg-[#4a3b32] transition-colors text-text-main dark:text-white text-sm font-bold leading-normal">
+<img alt="Google Logo" class="w-5 h-5" data-alt="Google colorful G logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWIGYafcOc21NX2zjBhT600bjadQBISh_i9VF1IX-gu1gFhXax1lTTnJNQtFQcrSsyxdq1n10yxGn9r_JRZ6xfdNU_AdNQLNTwrxFfU4YEMvFyz0vvSrZm6zSkbkgFV8SDyFBBW-2KBiL41wvNi9RPEIfNTJdVr97Oh6b3JCQkCB6434lhyC2pBX3SaZAH63kLU0UjnoeNyiMSij6qsmHRT7U9ZlUd1arARXYOECxjwlLzy3pKPfBBPhqPazWKiLqVzXRhzOOGnB6g"/>
+<span>Google</span>
+</button>
+<!-- Footer Link -->
+<div class="flex justify-center items-center pt-2">
+<p class="text-text-secondary text-sm">
+                        Already a member? 
+                        <a class="text-primary font-bold hover:text-[#d57211] hover:underline transition-all" href="#">Log in here</a>
+</p>
+</div>
+</div>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LearnIT Login</title>
+<!-- Google Fonts: Lexend -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec7f13",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#221910",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased text-[#1b140d] dark:text-[#fcfaf8] min-h-screen flex flex-col">
+<!-- Main Layout Container -->
+<div class="relative flex min-h-screen w-full flex-col justify-center items-center p-4">
+<!-- Login Card -->
+<div class="w-full max-w-[480px] bg-white dark:bg-[#2c2219] rounded-2xl shadow-xl ring-1 ring-black/5 dark:ring-white/5 overflow-hidden">
+<div class="p-8 sm:p-10 flex flex-col gap-6">
+<!-- Header Section -->
+<div class="flex flex-col items-center justify-center text-center">
+<div class="bg-primary/10 rounded-full p-3 mb-4 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[32px]">school</span>
+</div>
+<h1 class="text-[#1b140d] dark:text-white tracking-tight text-[32px] font-bold leading-tight">LearnIT</h1>
+<h2 class="text-[#1b140d] dark:text-gray-200 tracking-tight text-[24px] font-bold leading-tight pt-2">Welcome back!</h2>
+<p class="text-[#9a734c] dark:text-[#d4bca0] text-base font-normal leading-normal pt-2">Please enter your details to continue learning.</p>
+</div>
+<!-- Form Section -->
+<form action="#" class="flex flex-col gap-5 w-full" onclick="event.preventDefault()">
+<!-- Email Field -->
+<div class="flex flex-col gap-2">
+<label class="text-[#1b140d] dark:text-white text-base font-medium leading-normal" for="email">Email</label>
+<div class="flex w-full items-center rounded-lg border border-[#e7dbcf] dark:border-[#5c402d] bg-[#fcfaf8] dark:bg-[#1a120b] focus-within:border-primary focus-within:ring-1 focus-within:ring-primary overflow-hidden transition-all duration-200">
+<input class="flex-1 w-full h-12 bg-transparent border-none text-[#1b140d] dark:text-white placeholder-[#9a734c] dark:placeholder-[#6e5238] focus:ring-0 px-4 text-base" id="email" placeholder="Enter your email" type="email"/>
+<div class="pr-4 flex items-center justify-center text-[#9a734c] dark:text-[#6e5238]">
+<span class="material-symbols-outlined">person</span>
+</div>
+</div>
+</div>
+<!-- Password Field -->
+<div class="flex flex-col gap-2">
+<label class="text-[#1b140d] dark:text-white text-base font-medium leading-normal" for="password">Password</label>
+<div class="flex w-full items-center rounded-lg border border-[#e7dbcf] dark:border-[#5c402d] bg-[#fcfaf8] dark:bg-[#1a120b] focus-within:border-primary focus-within:ring-1 focus-within:ring-primary overflow-hidden transition-all duration-200">
+<input class="flex-1 w-full h-12 bg-transparent border-none text-[#1b140d] dark:text-white placeholder-[#9a734c] dark:placeholder-[#6e5238] focus:ring-0 px-4 text-base" id="password" placeholder="Enter your password" type="password"/>
+<button class="pr-4 flex items-center justify-center text-[#9a734c] dark:text-[#6e5238] hover:text-primary transition-colors cursor-pointer" type="button">
+<span class="material-symbols-outlined">visibility_off</span>
+</button>
+</div>
+</div>
+<!-- Actions Row -->
+<div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+<label class="flex items-center gap-2 cursor-pointer group">
+<div class="relative flex items-center">
+<input class="peer h-5 w-5 rounded border-[#e7dbcf] dark:border-[#5c402d] text-primary focus:ring-primary/20 bg-[#fcfaf8] dark:bg-[#1a120b] cursor-pointer" type="checkbox"/>
+</div>
+<span class="text-sm font-medium text-[#1b140d] dark:text-gray-300 group-hover:text-primary transition-colors">Remember me</span>
+</label>
+<a class="text-sm font-semibold text-primary hover:text-[#d36d0b] transition-colors" href="#">
+                            Forgot Password?
+                        </a>
+</div>
+<!-- Login Button -->
+<button class="w-full bg-primary hover:bg-[#d36d0b] text-white font-bold h-12 rounded-lg shadow-sm hover:shadow-md transition-all duration-200 mt-2 text-base">
+                        Log In
+                    </button>
+<!-- Footer Link -->
+<div class="text-center pt-2">
+<p class="text-[#1b140d] dark:text-gray-300 text-sm">
+                            Don't have an account? 
+                            <a class="text-primary font-semibold hover:underline" href="#">Sign up</a>
+</p>
+</div>
+</form>
+</div>
+</div>
+<!-- Decorative Background Elements for extra "Modern" feel -->
+<div class="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden pointer-events-none">
+<div class="absolute -top-[10%] -left-[10%] w-[50%] h-[50%] rounded-full bg-primary/5 blur-[100px]"></div>
+<div class="absolute top-[20%] -right-[10%] w-[40%] h-[40%] rounded-full bg-primary/5 blur-[80px]"></div>
+</div>
+</div>
+</body></html>

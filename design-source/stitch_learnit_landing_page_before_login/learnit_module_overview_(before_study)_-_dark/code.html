@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LearnIT Module Overview</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&amp;family=Noto+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f09942",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#221910", // Dark warm brown
+                        "surface-dark": "#2f251b", // Slightly lighter brown for cards
+                        "text-cream": "#F5F0EB",
+                        "text-muted": "#c9ad92",
+                    },
+                    fontFamily: {
+                        "display": ["Work Sans", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-cream font-display antialiased overflow-x-hidden">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Navbar -->
+<div class="w-full flex justify-center sticky top-0 z-50 bg-background-dark/95 backdrop-blur-sm border-b border-[#483623]">
+<div class="layout-content-container flex flex-col max-w-[1200px] w-full flex-1">
+<header class="flex items-center justify-between whitespace-nowrap px-4 md:px-10 py-3">
+<div class="flex items-center gap-4 text-white">
+<div class="size-8 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">school</span>
+</div>
+<h2 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">LearnIT</h2>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<button class="text-text-muted hover:text-white transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 ring-2 ring-[#483623]" data-alt="User profile avatar with a smiling face" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBGHvGRxnX2dsqKn0IlCcflqG-k66wOygCxQkckroMWVQTuo0quzmp042b9yF9Nu19wA3I7PjBHYTgz6eWdodlD9cgqdYIcYN3fgRvHvv-4SO_f-4p-DexHyrctb8QmX3l7_5uy4y9eL1KOzg4X0AdluCN27f98od-M9-vQD4N0-sxAjEWnrsNBxejW1PsJE3TCRUliTf4a3mDdF3HLnvkRbaIr6ZrPMPGbsvQwEREZTJJ_JzSBhwbMYq1hCeprjzmGXh30xUm5csb9");'>
+</div>
+</div>
+</header>
+</div>
+</div>
+<!-- Main Content Area -->
+<div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+<!-- Breadcrumbs -->
+<div class="flex flex-wrap gap-2 px-4 py-2 mb-4">
+<a class="text-text-muted hover:text-primary transition-colors text-sm font-medium leading-normal flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[18px]">home</span>
+                            Home
+                        </a>
+<span class="text-text-muted text-sm font-medium leading-normal">/</span>
+<a class="text-text-muted hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Courses</a>
+<span class="text-text-muted text-sm font-medium leading-normal">/</span>
+<span class="text-white text-sm font-medium leading-normal">Web Development</span>
+</div>
+<!-- Hero Section -->
+<div class="@container mb-8">
+<div class="flex flex-col gap-6 px-4 py-6 @[480px]:gap-8 @[864px]:flex-row items-center">
+<!-- Hero Image -->
+<div class="w-full @[864px]:w-1/2 relative group">
+<div class="absolute -inset-1 bg-gradient-to-r from-primary to-[#c9ad92] rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+<div class="relative w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl shadow-2xl" data-alt="Abstract illustration representing web coding with brackets and floating geometric shapes" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDcTU9jA8ZkYPtf2k99kl9DiPzcr5-Fdp6WK45yUaDrtVI6Wlmb_bJpE2Pv4gDGKy1aHAFSy7WKqh_y2IvZo--UXazUlIWnk6-BvU3pC1rdEflA7YuaN29d6s-3Qx0QLOio3ANRzM0FUjmnFt5_yqANSo68TdRd4OT3IvYhE1kfgTZBjom7g5vm2FArvGKRCmzSGgkig8Vt2qan6Eq0ojiQPLmk6Ty025vtBAKb720p_wnqzUVeotkn7HuLUj-L5ewW4g0YUONC-hJ7");'>
+<div class="absolute inset-0 bg-black/30 rounded-xl flex items-center justify-center">
+<div class="bg-background-dark/80 p-4 rounded-full backdrop-blur-sm border border-primary/30">
+<span class="material-symbols-outlined text-primary text-4xl">play_arrow</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Hero Content -->
+<div class="flex flex-col gap-6 @[864px]:w-1/2 justify-center">
+<div class="flex flex-col gap-3 text-left">
+<div class="inline-flex items-center gap-2">
+<span class="bg-primary/20 text-primary text-xs font-bold px-2 py-1 rounded uppercase tracking-wider">Module 1</span>
+</div>
+<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl">
+                                        Dasar Pemrograman Web
+                                    </h1>
+<h2 class="text-text-muted text-base font-normal leading-relaxed">
+                                        Kickstart your journey into the world of web development. Master the basics of HTML, CSS, and how the internet works.
+                                    </h2>
+</div>
+<div class="flex flex-wrap gap-4 items-center">
+<button class="flex min-w-[160px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-xl h-12 px-6 bg-primary hover:bg-primary/90 transition-all text-[#221a11] text-base font-bold leading-normal tracking-[0.015em] shadow-[0_4px_14px_0_rgba(240,153,66,0.39)] hover:shadow-[0_6px_20px_rgba(240,153,66,0.23)] hover:-translate-y-0.5 active:translate-y-0">
+<span>Mulai Belajar</span>
+<span class="material-symbols-outlined text-[20px] font-bold">arrow_forward</span>
+</button>
+<button class="flex items-center justify-center size-12 rounded-xl border border-[#483623] text-text-muted hover:text-white hover:bg-[#483623] transition-colors">
+<span class="material-symbols-outlined">bookmark_border</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Metadata Chips -->
+<div class="px-4 mb-8">
+<div class="bg-surface-dark rounded-2xl p-4 flex flex-wrap gap-4 md:gap-8 items-center border border-[#483623]">
+<div class="flex items-center gap-3">
+<div class="bg-[#483623] p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xs text-text-muted uppercase font-bold tracking-wider">Estimasi</span>
+<span class="text-white font-medium">45 Mins</span>
+</div>
+</div>
+<div class="w-px h-8 bg-[#483623] hidden md:block"></div>
+<div class="flex items-center gap-3">
+<div class="bg-[#483623] p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">signal_cellular_alt</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xs text-text-muted uppercase font-bold tracking-wider">Level</span>
+<span class="text-white font-medium">Beginner</span>
+</div>
+</div>
+<div class="w-px h-8 bg-[#483623] hidden md:block"></div>
+<div class="flex items-center gap-3">
+<div class="bg-[#483623] p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">military_tech</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xs text-text-muted uppercase font-bold tracking-wider">Reward</span>
+<span class="text-white font-medium">+150 XP</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Details Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 px-4 pb-10">
+<!-- Left Column: Description & Curriculum -->
+<div class="lg:col-span-2 flex flex-col gap-8">
+<section>
+<h3 class="text-white text-xl font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">info</span>
+                                    About this Module
+                                </h3>
+<div class="bg-surface-dark rounded-2xl p-6 border border-[#483623]">
+<p class="text-text-muted leading-relaxed mb-4">
+                                        In this foundational module, you will learn the core concepts that power every website you visit. We start from scratch, assuming no prior knowledge, and guide you through the syntax and structure of the web.
+                                    </p>
+<p class="text-text-muted leading-relaxed">
+                                        By the end of this session, you won't just be browsing the web—you'll understand the code behind it. This module is the essential first step for anyone looking to become a Frontend or Fullstack Developer.
+                                    </p>
+</div>
+</section>
+<section>
+<h3 class="text-white text-xl font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">checklist</span>
+                                    What You Will Learn
+                                </h3>
+<div class="bg-surface-dark rounded-2xl p-6 border border-[#483623]">
+<ul class="flex flex-col gap-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary shrink-0 mt-0.5">check_circle</span>
+<span class="text-text-cream">Understand the basic structure of an HTML document and the DOM.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary shrink-0 mt-0.5">check_circle</span>
+<span class="text-text-cream">Learn how to style elements using basic CSS properties like colors and fonts.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary shrink-0 mt-0.5">check_circle</span>
+<span class="text-text-cream">Set up your local development environment with VS Code.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary shrink-0 mt-0.5">check_circle</span>
+<span class="text-text-cream">Deploy your first static webpage to the internet.</span>
+</li>
+</ul>
+</div>
+</section>
+</div>
+<!-- Right Column: Skills & Info -->
+<div class="flex flex-col gap-8">
+<section>
+<h3 class="text-white text-xl font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">tips_and_updates</span>
+                                    Skills Gained
+                                </h3>
+<div class="flex flex-wrap gap-2">
+<div class="px-3 py-1.5 rounded-lg bg-[#483623] border border-primary/20 text-text-cream text-sm font-medium">HTML5</div>
+<div class="px-3 py-1.5 rounded-lg bg-[#483623] border border-primary/20 text-text-cream text-sm font-medium">CSS3</div>
+<div class="px-3 py-1.5 rounded-lg bg-[#483623] border border-primary/20 text-text-cream text-sm font-medium">Web Basics</div>
+<div class="px-3 py-1.5 rounded-lg bg-[#483623] border border-primary/20 text-text-cream text-sm font-medium">VS Code</div>
+</div>
+</section>
+<section>
+<h3 class="text-white text-xl font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">group</span>
+                                    Instructor
+                                </h3>
+<div class="bg-surface-dark rounded-2xl p-4 border border-[#483623] flex items-center gap-4">
+<div class="size-12 bg-center bg-cover rounded-full bg-gray-600" data-alt="Portrait of the instructor smiling" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAfuaYg1aCaPAkxB_uWP6kzpwEedBopOCPgSZnCPdNRg97AzQ0PQN-WKKL18zVisdgncJGK6c4lDmVu8DI5jwghjb8jruiwK1x4TLt2EQKdU23bQupXpvCNVpKGrfGkHCiLTgyiJPHwUB_8--RGIeTKlu96NqiGItvtnynrgL24NKXfZq-JAA4H_4nb80pHwu7RTZARaGgmCOqf0bjAFhPvg8Fa_xcGq_3t5caP99Ubn0USVOLGQ2HP8MWakxK1_-l_yUT2mpvpL-OY");'></div>
+<div>
+<h4 class="text-white font-bold">Sarah Santoso</h4>
+<p class="text-text-muted text-sm">Senior Frontend Dev</p>
+</div>
+</div>
+</section>
+<section>
+<div class="p-4 rounded-2xl bg-gradient-to-br from-[#483623] to-[#221a11] border border-primary/20">
+<div class="flex items-center gap-2 mb-2 text-primary">
+<span class="material-symbols-outlined">lightbulb</span>
+<span class="font-bold text-sm uppercase tracking-wider">Pro Tip</span>
+</div>
+<p class="text-sm text-text-muted">
+                                        Take notes during the "HTML Structure" video, it's crucial for the final quiz!
+                                    </p>
+</div>
+</section>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

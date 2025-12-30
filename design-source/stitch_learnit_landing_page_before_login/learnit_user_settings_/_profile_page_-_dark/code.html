@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LearnIT - User Settings</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;family=Noto+Sans:wght@300..800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e69019",
+                        "primary-hover": "#cc7a0d",
+                        "secondary-bg": "#2c2419", // Slightly lighter brown for cards
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#211a11",
+                        "text-cream": "#c8b293",
+                        "accent-brown": "#473824",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white overflow-hidden h-screen flex">
+<!-- Sidebar Navigation -->
+<aside class="w-72 bg-[#1a140d] border-r border-[#2c2419] hidden lg:flex flex-col h-full flex-shrink-0">
+<div class="p-6">
+<h1 class="text-white text-2xl font-bold leading-normal mb-1">LearnIT</h1>
+<p class="text-text-cream text-sm font-normal">Student Dashboard</p>
+</div>
+<nav class="flex-1 px-4 overflow-y-auto">
+<div class="flex flex-col gap-2">
+<p class="px-3 py-2 text-xs font-bold text-[#8c7a63] uppercase tracking-wider mt-2">Settings</p>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg bg-primary text-white shadow-md" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-sm font-medium">Profile</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-text-cream hover:bg-[#2c2419] hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Account</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-text-cream hover:bg-[#2c2419] hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined">credit_card</span>
+<span class="text-sm font-medium">Billing</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-text-cream hover:bg-[#2c2419] hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<span class="text-sm font-medium">Notifications</span>
+</a>
+</div>
+</nav>
+<div class="p-4 border-t border-[#2c2419]">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-red-400 hover:bg-[#2c2419] transition-colors" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="text-sm font-medium">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col h-full overflow-hidden relative">
+<!-- Top Mobile Header (visible only on small screens) -->
+<header class="lg:hidden flex items-center justify-between p-4 bg-[#1a140d] border-b border-[#2c2419]">
+<h1 class="text-xl font-bold">LearnIT</h1>
+<button class="text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<div class="flex-1 overflow-y-auto p-4 md:p-8 lg:p-12 scroll-smooth">
+<div class="max-w-5xl mx-auto space-y-8 pb-20">
+<!-- Breadcrumbs -->
+<nav class="flex items-center text-sm">
+<a class="text-text-cream hover:text-primary transition-colors font-medium" href="#">Home</a>
+<span class="material-symbols-outlined text-text-cream mx-2 text-base">chevron_right</span>
+<a class="text-text-cream hover:text-primary transition-colors font-medium" href="#">Settings</a>
+<span class="material-symbols-outlined text-text-cream mx-2 text-base">chevron_right</span>
+<span class="text-white font-medium">Profile</span>
+</nav>
+<!-- Page Heading -->
+<div class="flex flex-col gap-2">
+<h1 class="text-white text-3xl md:text-4xl font-bold tracking-tight">User Settings</h1>
+<p class="text-text-cream text-base md:text-lg">Manage your public profile and account security settings.</p>
+</div>
+<!-- Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Left Column: Edit Profile -->
+<div class="lg:col-span-2 space-y-6">
+<!-- Profile Card -->
+<div class="bg-secondary-bg rounded-xl shadow-lg border border-[#3e3428] overflow-hidden">
+<div class="px-6 py-5 border-b border-[#3e3428]">
+<h2 class="text-xl font-bold text-white">Public Profile</h2>
+</div>
+<div class="p-6 md:p-8 space-y-8">
+<!-- Avatar Upload Section -->
+<div class="flex flex-col sm:flex-row items-center sm:items-start gap-6">
+<div class="relative group">
+<div class="w-24 h-24 rounded-full bg-cover bg-center ring-4 ring-[#3e3428]" data-alt="User profile avatar placeholder with initials" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBuf5D_qC4MEzp4l8QOqy2cLvas0odKFDMSfe5wA0ik6hprnsAH8z432dYCebhpgVXbRPtymy102uEcz3Ez183cqDiy6HCsBuWrk_eriOcFa-5YL5g-OphUUBd8trYqz5vsvakDg5S7dgRhhvtgMo4OpG_iWStM34HuzTxNvsTt3nRrciJCOaLL2DBZNvluiJFC5hhWRyKXZ4qMmND9_cjobLoV4pwK2aYcV2DHT8Qkqw-R0jNc3Yv1qes28axIFubCkQq61o4w7Ce3');"></div>
+<button class="absolute bottom-0 right-0 bg-primary text-white p-1.5 rounded-full shadow-lg hover:bg-primary-hover transition-colors" title="Change Avatar">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+</div>
+<div class="flex flex-col items-center sm:items-start text-center sm:text-left flex-1">
+<h3 class="text-lg font-bold text-white">Profile Picture</h3>
+<p class="text-text-cream text-sm mb-4">PNG, JPG up to 5MB. Recommended size 400x400px.</p>
+<div class="flex gap-3">
+<button class="px-4 py-2 bg-accent-brown hover:bg-[#5a4830] text-white text-sm font-semibold rounded-lg transition-colors">
+                                                Upload New
+                                            </button>
+<button class="px-4 py-2 bg-transparent border border-[#5a4830] text-text-cream hover:text-white text-sm font-semibold rounded-lg transition-colors">
+                                                Remove
+                                            </button>
+</div>
+</div>
+</div>
+<!-- Form Fields -->
+<div class="grid grid-cols-1 gap-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-sm font-medium text-text-cream">Nickname</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#6b5d4d]">badge</span>
+<input class="w-full bg-[#1a140d] border border-[#3e3428] rounded-lg py-2.5 pl-10 pr-4 text-white placeholder-[#6b5d4d] focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" type="text" value="AlexCoder"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-medium text-text-cream">Email Address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#6b5d4d]">mail</span>
+<input class="w-full bg-[#1a140d] border border-[#3e3428] rounded-lg py-2.5 pl-10 pr-4 text-white placeholder-[#6b5d4d] focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" type="email" value="alex@learnit.com"/>
+</div>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-medium text-text-cream">Short Bio</label>
+<textarea class="w-full bg-[#1a140d] border border-[#3e3428] rounded-lg p-3 text-white placeholder-[#6b5d4d] focus:ring-2 focus:ring-primary focus:border-transparent outline-none resize-none transition-all" placeholder="Tell us a bit about yourself..." rows="4"></textarea>
+<div class="flex justify-between text-xs text-[#6b5d4d]">
+<span>Brief description for your profile.</span>
+<span>0/200</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-[#241d14] px-6 py-4 border-t border-[#3e3428] flex justify-end gap-3">
+<button class="px-5 py-2 text-sm font-medium text-text-cream hover:text-white transition-colors">Cancel</button>
+<button class="px-5 py-2 bg-primary hover:bg-primary-hover text-white text-sm font-medium rounded-lg shadow-md transition-all">Save Profile</button>
+</div>
+</div>
+</div>
+<!-- Right Column: Security -->
+<div class="space-y-6">
+<!-- Security Card -->
+<div class="bg-secondary-bg rounded-xl shadow-lg border border-[#3e3428] overflow-hidden">
+<div class="px-6 py-5 border-b border-[#3e3428]">
+<h2 class="text-xl font-bold text-white">Security &amp; Login</h2>
+</div>
+<div class="p-6 space-y-6">
+<!-- Change Password -->
+<div class="space-y-4">
+<h3 class="text-sm font-bold text-white uppercase tracking-wider mb-2">Change Password</h3>
+<div class="space-y-2">
+<label class="text-xs font-medium text-text-cream">Current Password</label>
+<input class="w-full bg-[#1a140d] border border-[#3e3428] rounded-lg py-2 px-3 text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" type="password"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-medium text-text-cream">New Password</label>
+<input class="w-full bg-[#1a140d] border border-[#3e3428] rounded-lg py-2 px-3 text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" type="password"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-medium text-text-cream">Confirm Password</label>
+<input class="w-full bg-[#1a140d] border border-[#3e3428] rounded-lg py-2 px-3 text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" type="password"/>
+</div>
+<button class="w-full mt-2 py-2 bg-accent-brown hover:bg-[#5a4830] text-white text-sm font-semibold rounded-lg transition-colors border border-[#5a4830]">
+                                        Update Password
+                                    </button>
+</div>
+<hr class="border-[#3e3428]"/>
+<!-- 2FA -->
+<div class="flex items-start justify-between gap-4">
+<div>
+<h3 class="text-sm font-bold text-white">2-Step Verification</h3>
+<p class="text-xs text-text-cream mt-1 leading-relaxed">Add an extra layer of security to your account.</p>
+</div>
+<!-- Toggle Switch -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-[#1a140d] peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-primary rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary border border-[#3e3428]"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- Danger Zone -->
+<div class="bg-secondary-bg rounded-xl shadow-lg border border-red-900/30 overflow-hidden">
+<div class="p-6">
+<h3 class="text-red-400 font-bold text-sm uppercase tracking-wider mb-2">Danger Zone</h3>
+<p class="text-xs text-text-cream mb-4">Once you delete your account, there is no going back. Please be certain.</p>
+<button class="w-full py-2 bg-transparent border border-red-900/50 hover:bg-red-900/20 text-red-400 text-sm font-semibold rounded-lg transition-colors">
+                                    Delete Account
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

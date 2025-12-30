@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LearnIT Admin Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+            extend: {
+                colors: {
+                "primary": "#ec7f13",
+                "background-light": "#f8f7f6",
+                "background-dark": "#221910",
+                "accent-brown": "#9a734c",
+                "border-cream": "#e7dbcf",
+                "text-dark": "#1b140d",
+                },
+                fontFamily: {
+                "display": ["Lexend", "sans-serif"],
+                "body": ["Noto Sans", "sans-serif"],
+                },
+                borderRadius: {"DEFAULT": "0.375rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                boxShadow: {
+                    'soft': '0 4px 6px -1px rgba(27, 20, 13, 0.05), 0 2px 4px -1px rgba(27, 20, 13, 0.03)',
+                }
+            },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for clean look */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e7dbcf; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d4c5b5; 
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light text-text-dark font-display antialiased overflow-hidden h-screen flex">
+<!-- Sidebar Navigation -->
+<aside class="w-72 bg-[#fcfaf8] border-r border-border-cream flex flex-col h-full flex-shrink-0 z-20">
+<div class="p-6 pb-2">
+<div class="flex items-center gap-3 mb-8">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-xl size-10 shadow-sm" data-alt="Abstract geometric logo in orange and brown" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCdKxt47U6y_wZZ2p17MsmYrVdjACifBbPqVfRLKXIISyQh-__X4ehndNckkSwTGFSI9W8Z9kAKvoP_E640OibS5Z2y0KQy_KM3z6i-AYRBkIjv5nCWiTGcRtggpf71TlYP0ErCMMeF6d4NDEOo4RxnL4D-uVB4uN017epCz7OHNJVnrUaZQAAqycC2CB3jt6I9vGa50tEtD1ropk_L6G1DIz1aZBef58UnDW1Uhg4VP3q_0pnLfw00GvbVcYWSjIhB1GFJT1bVB4OB");'></div>
+<div class="flex flex-col">
+<h1 class="text-text-dark text-lg font-bold leading-none tracking-tight">LearnIT Admin</h1>
+<p class="text-accent-brown text-xs font-normal mt-1">Informatics Platform</p>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<!-- Active Item -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary group transition-colors" href="#">
+<span class="material-symbols-outlined fill text-[24px]">dashboard</span>
+<p class="text-sm font-semibold leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-dark/70 hover:bg-white hover:text-primary hover:shadow-sm transition-all" href="#">
+<span class="material-symbols-outlined text-[24px]">book_2</span>
+<p class="text-sm font-medium leading-normal">Manage Modules</p>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-dark/70 hover:bg-white hover:text-primary hover:shadow-sm transition-all" href="#">
+<span class="material-symbols-outlined text-[24px]">group</span>
+<p class="text-sm font-medium leading-normal">Manage Users</p>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-dark/70 hover:bg-white hover:text-primary hover:shadow-sm transition-all" href="#">
+<span class="material-symbols-outlined text-[24px]">bar_chart</span>
+<p class="text-sm font-medium leading-normal">User Progress</p>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-text-dark/70 hover:bg-white hover:text-primary hover:shadow-sm transition-all" href="#">
+<span class="material-symbols-outlined text-[24px]">settings</span>
+<p class="text-sm font-medium leading-normal">Settings</p>
+</a>
+</div>
+</div>
+<div class="mt-auto p-6 border-t border-border-cream">
+<a class="flex items-center gap-3 px-2 py-2 rounded-lg hover:bg-red-50 text-text-dark/70 hover:text-red-600 transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">logout</span>
+<p class="text-sm font-medium leading-normal">Log Out</p>
+</a>
+<div class="flex items-center gap-3 mt-6 pt-4 border-t border-dashed border-border-cream/50">
+<div class="size-10 rounded-full bg-cover bg-center" data-alt="Portrait of admin user" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBy2w8yP_UP4f_T28isoyAvsO28JiP4daUHT0qL3BO7nEeA0VO9H0jyaibgddrIPsckmlR0iSTXBcg02t_kx7DwS_UkwE8oH0sQ2FnX2u_iNvCBaJQM1VQqzhXjepqOXYV3AphFu8y7qUaYP7pgYKD6_dcrIp5aENswOzxUwpOMirYNmWdx69C-FmeH8BuMJPsEmumU34qapxZyIjzdnIwAcIG1PCQ2yjN6t2sLyTCjNZTHXCN6VSXza-IeLKk4bw4P0dYr8Qz2EloZ");'></div>
+<div class="flex flex-col">
+<p class="text-sm font-bold text-text-dark">Alex Morgan</p>
+<p class="text-xs text-accent-brown">Super Admin</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col h-full overflow-hidden relative">
+<!-- Header -->
+<header class="h-20 px-8 flex items-center justify-between border-b border-border-cream bg-[#fcfaf8]/80 backdrop-blur-sm sticky top-0 z-10">
+<div class="flex items-center text-sm text-accent-brown">
+<span>Admin</span>
+<span class="material-symbols-outlined text-sm mx-2">chevron_right</span>
+<span class="text-text-dark font-medium">Dashboard</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-accent-brown text-lg">search</span>
+<input class="pl-10 pr-4 py-2 bg-white border border-border-cream rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary w-64 placeholder-accent-brown/50 transition-all" placeholder="Search modules, users..." type="text"/>
+</div>
+<button class="size-10 rounded-full border border-border-cream bg-white flex items-center justify-center text-text-dark hover:text-primary transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-primary rounded-full border-2 border-white"></span>
+</button>
+</div>
+</header>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto p-8 pb-20">
+<div class="max-w-[1200px] mx-auto space-y-8">
+<!-- Page Heading -->
+<div class="flex flex-wrap justify-between items-end gap-4">
+<div class="flex flex-col gap-2">
+<h2 class="text-text-dark text-3xl font-black leading-tight tracking-[-0.033em]">Dashboard</h2>
+<p class="text-accent-brown text-base font-normal">Welcome back, Alex. Here is an overview of the platform performance.</p>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white px-5 py-2.5 rounded-lg text-sm font-semibold shadow-lg shadow-primary/20 flex items-center gap-2 transition-all">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                        Create New Module
+                    </button>
+</div>
+<!-- Stats Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Stat 1 -->
+<div class="bg-white p-6 rounded-xl border border-border-cream shadow-soft group hover:border-primary/30 transition-all">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-primary/10 rounded-lg text-primary">
+<span class="material-symbols-outlined">school</span>
+</div>
+<span class="flex items-center text-[#07880e] bg-[#07880e]/10 px-2 py-0.5 rounded text-xs font-semibold">
+<span class="material-symbols-outlined text-[14px] mr-1">trending_up</span>
+                                +5%
+                            </span>
+</div>
+<p class="text-accent-brown text-sm font-medium mb-1">Total Students</p>
+<p class="text-text-dark text-3xl font-bold">1,240</p>
+</div>
+<!-- Stat 2 -->
+<div class="bg-white p-6 rounded-xl border border-border-cream shadow-soft group hover:border-primary/30 transition-all">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-primary/10 rounded-lg text-primary">
+<span class="material-symbols-outlined">library_books</span>
+</div>
+<span class="flex items-center text-[#07880e] bg-[#07880e]/10 px-2 py-0.5 rounded text-xs font-semibold">
+<span class="material-symbols-outlined text-[14px] mr-1">trending_up</span>
+                                +2%
+                            </span>
+</div>
+<p class="text-accent-brown text-sm font-medium mb-1">Active Modules</p>
+<p class="text-text-dark text-3xl font-bold">12</p>
+</div>
+<!-- Stat 3 -->
+<div class="bg-white p-6 rounded-xl border border-border-cream shadow-soft group hover:border-primary/30 transition-all">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-primary/10 rounded-lg text-primary">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+<span class="flex items-center text-[#07880e] bg-[#07880e]/10 px-2 py-0.5 rounded text-xs font-semibold">
+<span class="material-symbols-outlined text-[14px] mr-1">trending_up</span>
+                                +12%
+                            </span>
+</div>
+<p class="text-accent-brown text-sm font-medium mb-1">Avg. Completion</p>
+<p class="text-text-dark text-3xl font-bold">68%</p>
+</div>
+</div>
+<!-- Main Grid: Modules Table & Recent Activity -->
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+<!-- Modules Management (Takes up 2 cols) -->
+<div class="xl:col-span-2 flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<h3 class="text-text-dark text-lg font-bold">Recent Modules</h3>
+<a class="text-primary text-sm font-semibold hover:underline" href="#">View All</a>
+</div>
+<div class="bg-white border border-border-cream rounded-xl shadow-soft overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-sm text-left">
+<thead class="bg-[#fcfaf8] text-accent-brown uppercase text-xs font-semibold border-b border-border-cream">
+<tr>
+<th class="px-6 py-4">Module Name</th>
+<th class="px-6 py-4">Difficulty</th>
+<th class="px-6 py-4">Status</th>
+<th class="px-6 py-4">Students</th>
+<th class="px-6 py-4 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-cream">
+<tr class="hover:bg-[#fcfaf8] transition-colors group">
+<td class="px-6 py-4 font-medium text-text-dark">Intro to Python</td>
+<td class="px-6 py-4">
+<span class="px-2.5 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">Beginner</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="size-2 rounded-full bg-green-500"></span>
+<span class="text-text-dark/80">Active</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex -space-x-2 overflow-hidden">
+<img alt="Student avatar" class="inline-block size-6 rounded-full ring-2 ring-white" data-alt="Student avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKU2RX21fDPTZbsSO3-5YTOXLtEtM9UIyltBlmB7DSemV1SeymvFCArTYXGYCkwdiPP-OJ8cemhgspBhMKo6OiuOwgZcD_c1zzZP_WXLkGs05sKJiz3kIZaU5ITKEdGTkWDBn6A4h0SgeQIS20dpXWq03_kZywPREN4UmPUnJudbeSRex-IJLfmwTKfSYbBKURg4bSmv_inpikojTx6y9S0U1oWi2rn2MwvIc-Sqq-cfXdLzf-WuAydUyjCnisK1-lXWFK7BO-2XhN"/>
+<img alt="Student avatar" class="inline-block size-6 rounded-full ring-2 ring-white" data-alt="Student avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMd77sCN2ZFWPOnR7L3kqO0x39bIU_M6e9jrPu_bwp0SBtp0-sT0jqy1ARaHlAtjjohCYT_rRAXhivnRiVj9fI4uh4z9YoamUcl-f-3eoys_AcaM3YCLQgEqHUB_kM5n0YUSg-S9Y3lcwQf3b_b7wBjQyslvCFeRvDy1QgeLoTK4aF_XMhtfzNacdGUc8xM4SZnzLlP7PSy_s51FtJcDGvsPBwfNr90mhKSg3-s61IKfVfCVFjLWFRZrr2HK2VtrALMJPkgWWhkpR0"/>
+<img alt="Student avatar" class="inline-block size-6 rounded-full ring-2 ring-white" data-alt="Student avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAY5Ml3jAgmgb4WH1QMQ4WC9xoWoXb9xiTP1d4eryGl6Arw598nezRon9Z6wkMKqafGqLNX4clFVDE_iRzxWsbt2UOohPEhLODWgjxn5-Drj-s4fKFhz_TPRxeBzqTvV_HlqtAPiRn_mr4sEN5-DWRy9Zeu0hSU6O_BwpfQ_0TWtd_4oa7S1ZMFUS18gv0ZndUn8BRI3YUUbMWjF2bxwIiBPcwMP_UgpSNsLrD14Jgqvp3mDQGaEldzsGqK9kgQ6IqB5MPCECIE3rqi"/>
+<div class="size-6 rounded-full ring-2 ring-white bg-background-light flex items-center justify-center text-[10px] text-accent-brown font-bold">+42</div>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-accent-brown hover:text-primary p-1 rounded transition-colors"><span class="material-symbols-outlined text-[20px]">edit</span></button>
+<button class="text-accent-brown hover:text-red-500 p-1 rounded transition-colors"><span class="material-symbols-outlined text-[20px]">delete</span></button>
+</td>
+</tr>
+<tr class="hover:bg-[#fcfaf8] transition-colors group">
+<td class="px-6 py-4 font-medium text-text-dark">Data Structures I</td>
+<td class="px-6 py-4">
+<span class="px-2.5 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-800">Intermediate</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="size-2 rounded-full bg-green-500"></span>
+<span class="text-text-dark/80">Active</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex -space-x-2 overflow-hidden">
+<img alt="Student avatar" class="inline-block size-6 rounded-full ring-2 ring-white" data-alt="Student avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCsQN4kK1MLeTNvIJcai2NZzu4Elbl8HEnsIB8Int0fWPv4o-T6-7Hek_KZ3awSSltP_DldnhdhCJCGhYjQadQnZ4Ksf7rfmf6uQHFtDlF3HAzXuoMcqBZhnRX989x5p_phR4iJH1_VcdyA0yyWqsuUqyI4srSGxDYZevf26_r8d2ATj3uS7NEaqHhY-B4ztt0392GCvxyistPQBoPB4I6D-iX5zWighgL-8T0gE9FBIvcZXAMGj7lw03JWVx68enqDjPoaEftPnbA"/>
+<div class="size-6 rounded-full ring-2 ring-white bg-background-light flex items-center justify-center text-[10px] text-accent-brown font-bold">+18</div>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-accent-brown hover:text-primary p-1 rounded transition-colors"><span class="material-symbols-outlined text-[20px]">edit</span></button>
+<button class="text-accent-brown hover:text-red-500 p-1 rounded transition-colors"><span class="material-symbols-outlined text-[20px]">delete</span></button>
+</td>
+</tr>
+<tr class="hover:bg-[#fcfaf8] transition-colors group">
+<td class="px-6 py-4 font-medium text-text-dark">Web Algorithms</td>
+<td class="px-6 py-4">
+<span class="px-2.5 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800">Advanced</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="size-2 rounded-full bg-yellow-500"></span>
+<span class="text-text-dark/80">Draft</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="text-xs text-accent-brown italic">No students yet</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-accent-brown hover:text-primary p-1 rounded transition-colors"><span class="material-symbols-outlined text-[20px]">edit</span></button>
+<button class="text-accent-brown hover:text-red-500 p-1 rounded transition-colors"><span class="material-symbols-outlined text-[20px]">delete</span></button>
+</td>
+</tr>
+<tr class="hover:bg-[#fcfaf8] transition-colors group">
+<td class="px-6 py-4 font-medium text-text-dark">Database Design</td>
+<td class="px-6 py-4">
+<span class="px-2.5 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">Beginner</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="size-2 rounded-full bg-gray-400"></span>
+<span class="text-text-dark/80">Archived</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex -space-x-2 overflow-hidden">
+<img alt="Student avatar" class="inline-block size-6 rounded-full ring-2 ring-white" data-alt="Student avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCztgdi7biAlX0VfQ077v661rma50sZNIXU07r_Y43ouEYGJSE_jOG11tvxpz6rFEV8pdvIKnRskRr-bn42lnlNVZO-Zk2gCrtd8qhZFsoy805scxOHrEASoOLs-SR5TT2aZ1NH80BJu_d0kgBXT08ibrARnQ_w3bGGhBFOrNU1IekgQvdyhlWIz37v-Sn5dx-zzYnX7ePsxhlSGuXmpDaDQt_1SszCwIMkp2v-KgHG3FtvXxHcVI5_TJ-TOD-Nc5q19Hkmgrlm8Mdc"/>
+<img alt="Student avatar" class="inline-block size-6 rounded-full ring-2 ring-white" data-alt="Student avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOZQFhBJwzSwCmdEEvRRmQcciQNqW3e-XLW1QFNfIbFFE-DL26mVy1F1uePtUtzWcjtBzcF7NYbnD7nGrAOtDvTXd52ThWwis49_D8hSNnxpgZ4ioeWWMdh1O9lwAXymJ3-dTQ2FC8oDk3v-0p3B3cB5wq1N1-8E24YdwWh2Dt3FrZf6CAD5WPbF8AsubvOBRyOXL_CMaU1TSbfUuJEuWxCNXmY8lrTu-9Hhjg71U12CFGTBm000dy1ux8hH6x4fvUB3n_b5ydGYeb"/>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-accent-brown hover:text-primary p-1 rounded transition-colors"><span class="material-symbols-outlined text-[20px]">edit</span></button>
+<button class="text-accent-brown hover:text-red-500 p-1 rounded transition-colors"><span class="material-symbols-outlined text-[20px]">delete</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Recent Activity (Takes up 1 col) -->
+<div class="flex flex-col gap-4">
+<h3 class="text-text-dark text-lg font-bold">Recent Activity</h3>
+<div class="bg-white border border-border-cream rounded-xl shadow-soft p-6 h-full">
+<div class="flex flex-col h-full">
+<div class="grid grid-cols-[24px_1fr] gap-x-4 h-full">
+<!-- Item 1 -->
+<div class="flex flex-col items-center">
+<div class="bg-green-100 text-green-700 rounded-full p-1 flex items-center justify-center size-6 z-10">
+<span class="material-symbols-outlined text-[14px] font-bold">check</span>
+</div>
+<div class="w-[1px] bg-border-cream grow h-full my-1"></div>
+</div>
+<div class="pb-6">
+<p class="text-text-dark text-sm font-semibold">Module Completed</p>
+<p class="text-accent-brown text-xs mt-0.5">John Doe completed 'Intro to Python'</p>
+<p class="text-accent-brown/60 text-[10px] mt-1">2 mins ago</p>
+</div>
+<!-- Item 2 -->
+<div class="flex flex-col items-center">
+<div class="bg-primary/10 text-primary rounded-full p-1 flex items-center justify-center size-6 z-10">
+<span class="material-symbols-outlined text-[14px]">person_add</span>
+</div>
+<div class="w-[1px] bg-border-cream grow h-full my-1"></div>
+</div>
+<div class="pb-6">
+<p class="text-text-dark text-sm font-semibold">New Registration</p>
+<p class="text-accent-brown text-xs mt-0.5">Sarah Smith joined the platform</p>
+<p class="text-accent-brown/60 text-[10px] mt-1">2 hours ago</p>
+</div>
+<!-- Item 3 -->
+<div class="flex flex-col items-center">
+<div class="bg-blue-100 text-blue-600 rounded-full p-1 flex items-center justify-center size-6 z-10">
+<span class="material-symbols-outlined text-[14px]">edit_document</span>
+</div>
+<div class="w-[1px] bg-border-cream grow h-full my-1"></div>
+</div>
+<div class="pb-6">
+<p class="text-text-dark text-sm font-semibold">Content Update</p>
+<p class="text-accent-brown text-xs mt-0.5">Module 'Data Structures' updated by Admin</p>
+<p class="text-accent-brown/60 text-[10px] mt-1">Yesterday</p>
+</div>
+<!-- Item 4 -->
+<div class="flex flex-col items-center">
+<div class="bg-yellow-100 text-yellow-600 rounded-full p-1 flex items-center justify-center size-6 z-10">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+</div>
+<!-- No line for last item -->
+</div>
+<div>
+<p class="text-text-dark text-sm font-semibold">System Alert</p>
+<p class="text-accent-brown text-xs mt-0.5">Scheduled maintenance for tonight</p>
+<p class="text-accent-brown/60 text-[10px] mt-1">Yesterday</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick User Progress Section -->
+<div class="flex flex-col gap-4">
+<h3 class="text-text-dark text-lg font-bold">User Progress Overview</h3>
+<div class="bg-white border border-border-cream rounded-xl shadow-soft p-6">
+<div class="flex flex-col gap-6">
+<!-- User 1 -->
+<div class="flex items-center gap-4">
+<img alt="User avatar" class="size-10 rounded-full object-cover" data-alt="User avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAe_WsbZ8VZFRfNYy_ZMnZ3Vt-vm0OJROtPzvSUK-luA3A8meQ0xuNAB2cWCLp4yR4h-PSH12JQoKwqyXpqrPVIRY8BtA3Mspjo6Zf3uNC9C9Lh9NGNoGviCNPRFjee0WTAls3fvK7-Mx-hSC6ZZKjLmtX40rVziqsaYe-jIAigS2va0fY62n9hplqPE8f87jnWrbqJ5NNa0Kmnw5AjXRlQeNZLl88dvV7E714pItAflNPpCo70zagARiX4DqT5uOhpe7Sc3jY8iwsK"/>
+<div class="flex-1">
+<div class="flex justify-between mb-1">
+<span class="text-sm font-medium text-text-dark">Michael Scott</span>
+<span class="text-sm font-medium text-primary">75%</span>
+</div>
+<div class="w-full bg-[#f3ede7] rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 75%"></div>
+</div>
+</div>
+</div>
+<!-- User 2 -->
+<div class="flex items-center gap-4">
+<img alt="User avatar" class="size-10 rounded-full object-cover" data-alt="User avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtVdwXAAGAy5UT-LVBBNW7Di0QrF7JFd53jtYqSCtt6YamkiAb77lPYoFSlkHjVqWWAAfSoBfP3dGUHobJNrIZ0u6lDQY1Kv-VNvaEL_j4Xlv_Tddk1gpw1AvoKnSzIwgj4MHarzFsDh8QJHD_6vNNEebfV4Xj9P5ouKbZZbXEGelr1mngYmY9w3gY-RuiVDmYrwZxShg3O_vNY7Uv8XQkS_PNNXlLDhLQIi8OKxOG3HCsRVCDAs5XbxtahWUZWXx2vx-G9-gibNWZ"/>
+<div class="flex-1">
+<div class="flex justify-between mb-1">
+<span class="text-sm font-medium text-text-dark">Pam Beesly</span>
+<span class="text-sm font-medium text-primary">45%</span>
+</div>
+<div class="w-full bg-[#f3ede7] rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 45%"></div>
+</div>
+</div>
+</div>
+<!-- User 3 -->
+<div class="flex items-center gap-4">
+<img alt="User avatar" class="size-10 rounded-full object-cover" data-alt="User avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWGPuQ4phZb00CdILkPkqz9mfT-IqE4ON4gg1DYkiy4n0M4QdbxeUSlhrLDzwNzi505me5Ryc5HneCzAbOG-7uAbj4l5E36n2JrBZlq-0SjBskSiVWoYiiTNNVQ3csCe38Ttx7wrYM-mZOYN8wyst-de__qFVJghYWgJoZA_6hBIzCUDlOdWzG0ZHNfPPHRyAYQDcdf3BDsaBH4Kno-1Mk1WLw6wsqwj2gdA-O-_nU3bZFdrKKlxKz5eEMySu0XZ9d0cFxd4bEjrY0"/>
+<div class="flex-1">
+<div class="flex justify-between mb-1">
+<span class="text-sm font-medium text-text-dark">Jim Halpert</span>
+<span class="text-sm font-medium text-primary">90%</span>
+</div>
+<div class="w-full bg-[#f3ede7] rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 90%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>
